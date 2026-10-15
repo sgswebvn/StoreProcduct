@@ -34,19 +34,35 @@ export type Permission =
   // Inventory (optional module)
   | 'inventory.read'
   | 'inventory.adjust'
-  // Users
+  // Users (chuẩn hóa XLII)
   | 'users.read'
+  | 'users.create'
+  | 'users.update'
+  | 'users.disable'
   | 'users.manage'
-  // Settings
+  // Roles
+  | 'roles.read'
+  | 'roles.manage'
+  // Settings (chuẩn hóa XLII)
   | 'settings.read'
+  | 'settings.update'
   | 'settings.manage'
+  | 'settings.secrets.manage'
+  // Scripts (chuẩn hóa XXXIX)
+  | 'scripts.read'
+  | 'scripts.manage'
   // API & Integrations
   | 'api_keys.read'
   | 'api_keys.manage'
   | 'webhooks.read'
   | 'webhooks.manage'
-  // Audit
+  // Audit (chuẩn hóa XLIII)
+  | 'audit.read'
   | 'audit_logs.read'
+  // Errors & System Monitoring (chuẩn hóa XLIV)
+  | 'errors.read'
+  | 'errors.resolve'
+  | 'system.maintenance'
   // Import/Export
   | 'import_export.read'
   | 'import_export.execute';
@@ -72,11 +88,14 @@ export const ROLE_PERMISSIONS: Record<Role, Permission[]> = {
     'projects.read', 'projects.manage',
     'modules.read', 'modules.manage',
     'inventory.read', 'inventory.adjust',
-    'users.read', 'users.manage',
-    'settings.read', 'settings.manage',
+    'users.read', 'users.create', 'users.update', 'users.disable', 'users.manage',
+    'roles.read', 'roles.manage',
+    'settings.read', 'settings.update', 'settings.manage', 'settings.secrets.manage',
+    'scripts.read', 'scripts.manage',
     'api_keys.read', 'api_keys.manage',
     'webhooks.read', 'webhooks.manage',
-    'audit_logs.read',
+    'audit.read', 'audit_logs.read',
+    'errors.read', 'errors.resolve', 'system.maintenance',
     'import_export.read', 'import_export.execute',
   ],
   administrator: [
@@ -88,11 +107,14 @@ export const ROLE_PERMISSIONS: Record<Role, Permission[]> = {
     'projects.read', 'projects.manage',
     'modules.read', 'modules.manage',
     'inventory.read', 'inventory.adjust',
-    'users.read',
-    'settings.read',
+    'users.read', 'users.create', 'users.update', 'users.disable',
+    'roles.read',
+    'settings.read', 'settings.update',
+    'scripts.read',
     'api_keys.read', 'api_keys.manage',
     'webhooks.read', 'webhooks.manage',
-    'audit_logs.read',
+    'audit.read', 'audit_logs.read',
+    'errors.read', 'errors.resolve',
     'import_export.read', 'import_export.execute',
   ],
   product_manager: [

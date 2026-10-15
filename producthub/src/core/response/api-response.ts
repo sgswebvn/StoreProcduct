@@ -97,6 +97,12 @@ export const apiErrors = {
       409
     ),
 
+  badRequest: (message = 'Bad request') =>
+    apiError('BAD_REQUEST', message, 400),
+
+  tooManyRequests: (message = 'Too many requests') =>
+    apiError('RATE_LIMITED', message, 429),
+
   internal: (message = 'An unexpected error occurred') =>
     apiError('INTERNAL_ERROR', message, 500),
 } as const;
