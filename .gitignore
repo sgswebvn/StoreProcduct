@@ -1,0 +1,24 @@
+# Dependencies
+node_modules/
+producthub/node_modules/
+
+# Next.js build
+.next/
+producthub/.next/
+out/
+producthub/out/
+build/
+producthub/build/
+
+# Environment files
+.env*
+producthub/.env*
+!.env.example
+!producthub/.env.example
+
+# Misc
+.DS_Store
+*.pem
+*.log
+.vercel
+producthub/.vercel
